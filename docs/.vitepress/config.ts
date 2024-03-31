@@ -19,6 +19,10 @@ export default defineConfig({
         outline: {
             level: [2, 3]
         },
+        footer: {
+            message: '<a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2023010551号</a>',
+            copyright: 'Copyright © 2019-present The Ballcat Authors'
+        },
         nav: [
             {text: '功能组件', link: '/guide/'},
             {text: '业务模块', link: '/business/'},
