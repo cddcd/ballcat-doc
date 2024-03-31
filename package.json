@@ -4,6 +4,11 @@
   "main": "index.js",
   "author": "Hccake <chengbohua@foxmail.com>",
   "license": "MIT",
+  "packageManager": "pnpm@8.6.12",
+  "engines": {
+    "node": ">=18.16.0",
+    "pnpm": ">=8"
+  },
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
