@@ -24,6 +24,12 @@ export default defineConfig({
             {text: '后台管理', link: '/admin/'},
             {text: '代码生成器', link: '/codegen/'},
             {
+                text: '2.0.0-SNAPSHOT',
+                items: [
+                    {text: '1.x 文档', link: "http://v1.ballcat.cn"},
+                ]
+            },
+            {
                 text: '更多',
                 items: [
                     {text: 'Maven 资源文件占位符使用', link: "/other/maven-resource-filter"},
@@ -31,7 +37,7 @@ export default defineConfig({
                     {text: 'git commit emoji', link: "/other/git-emoji"},
                     {text: 'Swagger 升级 OpenApi', link: "/other/swagger2ToOpenApi3"}
                 ]
-            }
+            },
         ],
         sidebar: {
             "/guide/": [
