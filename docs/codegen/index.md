@@ -278,7 +278,7 @@ location / {
 
 前端和服务端分别部署。
 
-可参考 ballcat 管理后台的[前端 nginx 配置](../guide/front/front-deploy.html)， `/api` 的 rewrite 和转发交由 nginx 处理。
+可参考 ballcat 管理后台的[前端 nginx 配置](/admin/front/front-deploy.html)， `/api` 的 rewrite 和转发交由 nginx 处理。
 
 
 

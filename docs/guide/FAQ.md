@@ -71,4 +71,4 @@ maven 编译文件时 yml 中的占位符没有被替换成功。
     ![](./img/faq-yml-error.png)
 
 **情况三：没有正确配置 maven 的 resource 资源过滤器**  
-    检查在项目 pom.xml 中是否添加对应的 `<resources>` 配置，配置方式参看: [Maven 占位符配置](/guide/other/maven-resource-filter.html)
+    检查在项目 pom.xml 中是否添加对应的 `<resources>` 配置，配置方式参看: [Maven 占位符配置](/other/maven-resource-filter.html)

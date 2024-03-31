@@ -71,7 +71,7 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
     
     结构替换：edit => find => replace structurally
     
-    <img src="img/openapi/replace-strcturally.png" alt="replace-strcturally" style="zoom: 80%;" />
+    <img src="./img/openapi/replace-strcturally.png" alt="replace-strcturally" style="zoom: 80%;" />
     
     
     

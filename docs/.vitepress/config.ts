@@ -8,6 +8,10 @@ export default defineConfig({
     transformPageData: (pageData: PageData, ctx: TransformPageContext) => {
         pageData.frontmatter.ballcatVersion = BALLCAT_VERSION
     },
+    ignoreDeadLinks: [
+        // ignore all localhost links
+        /^https?:\/\/localhost/,
+    ],
     themeConfig: {
         logo: './logo.png',
         // https://vitepress.dev/reference/default-theme-config

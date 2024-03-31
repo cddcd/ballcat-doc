@@ -311,7 +311,7 @@ public class RedisConfiguration {
 此版本移除了 ballcat 的 pom 中配置的 maven resource filter 控制，会导致 application.yml 中的 `@profiles.active@`
 等占位符无法正确解析替换，注意在自己项目的 pom.xml 中添加对应的 maven resource filter 配置。
 
-配置方式参看: [Maven 占位符配置](/guide/other/maven-resource-filter.html)
+配置方式参看: [Maven 占位符配置](/other/maven-resource-filter)
 
 ### ⭐ Features
 
