@@ -14,7 +14,7 @@ export default defineConfig({
     ],
     srcDir: ".",
     themeConfig: {
-        logo: './logo.png',
+        logo: '/logo.png',
         // https://vitepress.dev/reference/default-theme-config
         outline: {
             level: [2, 3]
@@ -29,7 +29,7 @@ export default defineConfig({
             {text: '后台管理', link: '/admin/'},
             {text: '代码生成器', link: '/codegen/'},
             {
-                text: '2.0.0-SNAPSHOT',
+                text: BALLCAT_VERSION,
                 items: [
                     {text: '1.x 文档', link: "http://v1.ballcat.cn"},
                 ]

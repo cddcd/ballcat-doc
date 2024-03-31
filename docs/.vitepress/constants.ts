@@ -1,1 +1,1 @@
-export const BALLCAT_VERSION = "2.0.0"
+export const BALLCAT_VERSION = "2.0.0-SNAPSHOT"
