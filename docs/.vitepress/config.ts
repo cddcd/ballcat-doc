@@ -12,6 +12,7 @@ export default defineConfig({
         // ignore all localhost links
         /^https?:\/\/localhost/,
     ],
+    srcDir: ".",
     themeConfig: {
         logo: './logo.png',
         // https://vitepress.dev/reference/default-theme-config
