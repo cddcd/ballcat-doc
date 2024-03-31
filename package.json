@@ -14,7 +14,10 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "vuepress": "2.0.0-beta.62",
-    "vuepress-plugin-right-anchor": "2.1.0-rc.2"
+    "@vuepress/bundler-vite": "next",
+    "@vuepress/client": "next",
+    "@vuepress/theme-default": "next",
+    "vue": "^3.4.15",
+    "vuepress": "next"
   }
 }

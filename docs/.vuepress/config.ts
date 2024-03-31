@@ -1,6 +1,6 @@
-import {defaultTheme, defineUserConfig} from "vuepress";
-// @ts-ignore
-import {rightAnchorPlugin} from "./plugin/right-anchor/node";
+import { viteBundler } from '@vuepress/bundler-vite';
+import { defaultTheme } from '@vuepress/theme-default';
+import { defineUserConfig } from 'vuepress';
 
 // https://v2.vuepress.vuejs.org/zh/
 export default defineUserConfig({
@@ -10,16 +10,10 @@ export default defineUserConfig({
     head: [["link", {rel: "icon", href: "/logo.png"}]],
     dest: "docs/.vuepress/doc",
     pagePatterns: ['**/[^.~]*.md', '!.vuepress', '!node_modules'],
-    plugins: [
-        rightAnchorPlugin({
-            name: 'rightAnchor',
-            showDepth: 2,
-            expand: {
-                trigger: 'click',
-                clickModeDefaultOpen: true
-            },
-        })
-    ],
+    bundler: viteBundler({
+        viteOptions: {},
+        vuePluginOptions: {},
+    }),
     theme : defaultTheme({
         navbar: [
             {text: "指南", link: "/guide/"},
