@@ -16,12 +16,15 @@ jobs:
 
       # checkout 分支
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.12
       - name: Use Node.js 18
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'pnpm'
-      - name: Install pnpm  dependencies
+      - name: Install pnpm dependencies
         run: pnpm install
       - name: Doc build
         run: pnpm run docs:build
