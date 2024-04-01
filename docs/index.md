@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Ballcat Projects"
-  text: ""
-  tagline: 高质量、易扩展的企业级组件库
+  name: "Ballcat"
+  text: "快速轻量稳定的组件库"
+  tagline: "功能丰富，轻松上手，开箱即用"
   image:
     src: /logo.png 
     alt: Ballcat Logo

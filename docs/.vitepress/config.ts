@@ -3,7 +3,7 @@ import {BALLCAT_VERSION} from "./constants";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: "Ballcat Projects",
+    title: "Ballcat",
     description: '帮助开发者快速高效的完成功能开发',
     transformPageData: (pageData: PageData, ctx: TransformPageContext) => {
         pageData.frontmatter.ballcatVersion = BALLCAT_VERSION
