@@ -59,6 +59,7 @@ export default defineConfig({
                     items: [
                         {text: '数据权限组件', link: "/guide/feature/data-scope"},
                         {text: '脱敏工具', link: "/guide/feature/desensitization"},
+                        {text: '策略模式工具', link: "/guide/feature/strategy"},
                         {text: '钉钉通知', link: "/guide/feature/dingtalk"},
                         {text: 'Excel 组件', link: "/guide/feature/excel"},
                         {text: 'File 文件组件', link: "/guide/feature/file"},
