@@ -319,6 +319,40 @@ public class ExcelHeadTestController {
 
 ![自定义头信息](https://hccake-img.oss-cn-shanghai.aliyuncs.com/ballcat/doc/excel-customHeader.png)
 
+
+### 导出并脱敏
+
+导出脱敏底层基于 ballcat 提供的 [脱敏组件](./desensitization)，使用时需要在导出的实体类上添加对应的脱敏注解。
+然后在导出时，`@ResponseExcel` 注解的 **writeHandler** 属性中添加脱敏拦截器类 **DesensitizationWriteHandler.class**。
+
+```java
+@ResponseExcel(name = "test", sheets = @Sheet(sheetName = "testSheet1"),
+			writeHandler = DesensitizationWriteHandler.class)
+@GetMapping("/desensitization")
+public List<DesensitizationUser> desensitization() {
+    List<DesensitizationUser> dataList = new ArrayList<>();
+    for (int i = 0; i < 100; i++) {
+        DesensitizationUser data = new DesensitizationUser();
+        data.setUsername("tr1" + i);
+        data.setPhoneNumber("13866138888");
+        dataList.add(data);
+    }
+    return dataList;
+}
+
+// 实体对象
+@Data
+@Accessors(chain = true)
+public class DesensitizationUser {
+    // 用户名不脱敏
+	private String username;
+    // 手机号脱敏
+	@SimpleDesensitize(handler = PhoneNumberDesensitizationHandler.class)
+	private String phoneNumber;
+}
+```
+
+
 ## 国际化的导入导出
 
 国际化配置基于 Spring 的 MessageSource，开启国际化时，spring 容器中必须有一个 MessageSource 的 Bean。
