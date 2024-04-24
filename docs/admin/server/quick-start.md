@@ -19,12 +19,12 @@
 
 ## 数据库配置
 
-版本： mysql
+版本： MySQL
 默认字符集：utf8mb4  
 默认排序规则：utf8mb4_general_ci
 
 :::warning  
-5.7.x 系列 mysql，需要开启 timestamp 类型默认值为 null 的支持, 在执行 sql 前先执行以下 sql.
+5.7.x 及以下版本的 MySQL，需要开启 timestamp 类型默认值为 null 的支持, 在执行 sql 前先执行以下 sql.
 ```sql
 set session explicit_defaults_for_timestamp = 1;
 ```

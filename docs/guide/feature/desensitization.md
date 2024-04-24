@@ -411,7 +411,36 @@ Ballcat 提供了 EasyExcel 对于脱敏注解的处理实现，具体使用参�
 
 ## 扩展使用
 
-### 自定义简单类型脱敏处理器
+### 扩展脱敏规则
+组件内置的规则无法实现业务需求时，可以通过实现 `SlideDesensitizeRule` 或 `RegexDesensitizeRule` 接口来对应扩展滑动脱敏或正则脱敏规则。
+
+例如实现自己的银行卡号滑动脱敏规则，前7后3为明文，其他位替换为 *。
+```java
+public class MyBankCardNoSlideDesensitizeRule implements SlideDesensitizeRule {
+
+	@Override
+	public int leftPlainTextLen() {
+		return 7;
+	}
+
+	@Override
+	public int rightPlainTextLen() {
+		return 3;
+	}
+
+	@Override
+	public String maskString() {
+		return "*";
+	}
+
+	@Override
+	public boolean reverse() {
+		return false;
+	}
+}
+```
+
+### 扩展简单类型脱敏处理器
 
 a) 首先定义自己的 `SimpleDesensitizationHandler` 实现类:
 
@@ -448,7 +477,7 @@ SimpleDesensitizationHandler desensitizationHandler =
 /**
  * 测试自定义脱敏
  */
-@JsonSimpleDesensitize(handler = SimpleDesensitizatioHanderSPIExample.class)
+@SimpleDesensitize(handler = SimpleDesensitizatioHanderSPIExample.class)
 private String testField;
 ```
 
