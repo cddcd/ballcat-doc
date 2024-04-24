@@ -13,7 +13,13 @@
 | Redis | 3.2 + |
 | node  | 16 +  |
 
-> 5.7.x 系列 mysql，需要开启 timestamp 类型默认值为 null 的支持
+:::warning  
+5.7.x 及以下版本的 MySQL，需要开启 timestamp 类型默认值为 null 的支持, 在执行 sql 前先执行以下 sql.
+```sql
+set session explicit_defaults_for_timestamp = 1;
+```
+注意，该设置仅当前会话内生效，所以执行完成后必须在同一会话内进行 sql 执行。  
+:::
 
 **另：请在您的开发工具中安装好 `Lombok` 插件, lombok 的使用参看其 [官方文档](https://projectlombok.org/)**
 > 最新版本的 Idea 中已经自带了 Lombok 插件
