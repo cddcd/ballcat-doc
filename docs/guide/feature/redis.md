@@ -179,7 +179,7 @@ keyJoint 的值为 [SPEL 表达式](https://docs.spring.io/spring-framework/docs
 注解示例：
 
 ```java
-@Cached(key = "testKey", keyJoint = "#p0", ttl="86400")
+@Cached(key = "testKey", keyJoint = "#p0", ttl=86400)
 public User getUser(String userName) {
     return new User("zhangsan", 18);
 }
@@ -233,6 +233,14 @@ public @interface CacheDel {
     * @return boolean
     */
    boolean multiDel() default false;
+
+
+  /**
+   * 是否删除缓存空间key下的所有条目
+   * 默认情况下，只删除相关键下的值。
+   * 注意，设置该参数为true时，指定的 keyJoint与multiDel将被忽略.
+   */
+  boolean allEntries() default false;
 }
 ```
 
@@ -259,6 +267,17 @@ public User updateUser(String username, String age) {
 @CacheDel(key = "testKey", keyJoint = "#p0", multiDel = true)
 public User updateUserStatus(List<String> usernameList, String status) {
     return mapper.updateUserAge(usernameList, age);
+}
+```
+
+有的时候我们需要一下清除Cache中所有的元素，因此类似于Spring Cache项目的@CacheEvict,```@CacheDel```同样提供了```allEntries```属性。```allEntries```是boolean类型，表示是否需要清除缓存中的所有元素。默认为false，表示不需要。当指定了```allEntries```为true时，将忽略指定的keyJoint表达式,通过redis scan删除```@CacheDel```的```key```属性能命中的所有相关的缓存。
+
+清除缓存示例：
+
+```java
+@CacheDel(key = "testKey",  allEntries = true)
+public User removeUser(String username) {
+  return mapper.removeUser(username);
 }
 ```
 
