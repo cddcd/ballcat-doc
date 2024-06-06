@@ -37,6 +37,7 @@ export default defineConfig({
             {
                 text: '更多',
                 items: [
+                    {text: '代码风格规范', link: "/other/code-style"},
                     {text: 'Maven 资源文件占位符使用', link: "/other/maven-resource-filter"},
                     {text: '二开代码同步', link: "/other/syncing-fork"},
                     {text: 'git commit emoji', link: "/other/git-emoji"},
